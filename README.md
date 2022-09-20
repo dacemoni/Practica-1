@@ -1,5 +1,7 @@
 # Aplicación inicial Spring Boot
 
+Enlace al docker: https://hub.docker.com/repository/docker/dacemoni/practica1
+
 Aplicación básica usando Spring Boot y plantillas Thymeleaf.
 
 ## Requisitos
