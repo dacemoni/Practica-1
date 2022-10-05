@@ -17,16 +17,14 @@ public class NumeroParControllerForm {
     private NumeroParService service;
 
     @GetMapping("/numeroparform")
-    public String numeroParForm(NumData numData) {
-        return "formRegistro";
-    }
+    public String numeroParForm(NumData numData) { return "numeroPar"; }
 
     @PostMapping("/numeroparform")
     public String checkPersonInfo(@ModelAttribute @Valid NumData numData, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "formRegistro";
+            return "numeroPar";
         }
-        model.addAttribute("mensaje", service.par(numData.getNum()));
-        return "numeroPar";
+        model.addAttribute("mensaje", service.esPar(numData.getNum()));
+        return "par";
     }
 }

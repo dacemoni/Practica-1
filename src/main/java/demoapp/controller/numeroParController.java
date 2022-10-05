@@ -14,5 +14,5 @@ public class numeroParController {
     private NumeroParService service;
 
     @RequestMapping("/numeropar/{num}")
-    public @ResponseBody String numeroPar(@PathVariable(value="num") int num) { return service.par(num); }
+    public @ResponseBody String numeroPar(@PathVariable(value="num") int num) { return service.esPar(num); }
 }
