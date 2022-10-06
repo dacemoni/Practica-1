@@ -2,6 +2,8 @@
 
 Enlace al docker: https://hub.docker.com/repository/docker/dacemoni/practica1
 
+Enlace al repositorio de Github: https://github.com/dacemoni/Practica-1
+
 Aplicación básica usando Spring Boot y plantillas Thymeleaf.
 
 ## Requisitos
