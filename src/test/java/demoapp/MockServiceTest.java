@@ -1,5 +1,6 @@
 package demoapp;
 
+import demoapp.service.NumeroParService;
 import demoapp.service.SaludoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +26,22 @@ public class MockServiceTest {
     // Podemos también mockear el servicio
     @MockBean
     private SaludoService service;
+    private NumeroParService service2;
 
     @Test
     public void greetingShouldReturnMessageFromService() throws Exception {
-
+        /*
         // Y especificar lo que debe devolver una llamada a uno de sus métodos
         when(service.saluda("Domingo")).thenReturn("Hola Mock Domingo");
 
         this.mockMvc.perform(get("/saludo/Domingo"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hola Mock Domingo")));
+        */
+        when(service2.esPar(4)).thenReturn("El número 4 es par");
+
+        this.mockMvc.perform(get("/numeropar/4"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("El número 4 es par")));
     }
 }

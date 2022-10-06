@@ -21,20 +21,21 @@ public class MockMvcTest {
 
     // Hacemos una petición GET a un end point y comprobamos que
     // el HTML resultante es correcto
+
     @Test
     public void shouldReturnDefaultMessage() throws Exception {
         this.mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Hello World")));
+                .andExpect(content().string(containsString("David César Moro Nieto - 137281")));
     }
 
     // Podemos hacer también una petición POST y pasar los datos
     // del formulario con el método .param
     @Test
     public void postShoudReturnCorrectResponse() throws Exception {
-        this.mockMvc.perform(post("/saludoform")
-                .param("nombre", "Domingo"))
+        this.mockMvc.perform(post("/numeroparform")
+                .param("num", "4"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Hola Domingo")));
+                .andExpect(content().string(containsString("El número 4 es par")));
     }
 }

@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 public class NumeroParService {
     public String esPar(int num) {
         if (num % 2 == 0) {
-            return "El número es par";
+            return "El número " + num + " es par";
         } else {
-            return "El número es impar";
+            return "El número " + num + " es impar";
         }
     }
 }

@@ -1,16 +1,18 @@
 package demoapp.controller;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 public class NumData {
+    @NotNull
     @Positive
-    private int num;
+    private Integer num;
 
-    public int getNum() {
+    public Integer getNum() {
         return num;
     }
 
-    public void setNum(int num) {
+    public void setNum(Integer num) {
         this.num = num;
     }
 }

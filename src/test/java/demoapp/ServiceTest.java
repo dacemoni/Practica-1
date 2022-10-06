@@ -1,5 +1,6 @@
 package demoapp;
 
+import demoapp.service.NumeroParService;
 import demoapp.service.SaludoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,15 +11,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ServiceTest {
 
     @Autowired
-    SaludoService saludo;
+    NumeroParService numeroPar;
 
     @Test
     public void contexLoads() throws Exception {
-        assertThat(saludo).isNotNull();
+        assertThat(numeroPar).isNotNull();
     }
 
     @Test
     public void serviceSaludo() throws Exception {
-        assertThat(saludo.saluda("Domingo")).isEqualTo("Hola Domingo");
+        assertThat(numeroPar.esPar(5)).isEqualTo("El número 5 es impar");
     }
 }
