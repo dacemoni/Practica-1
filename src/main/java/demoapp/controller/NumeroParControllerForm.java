@@ -20,7 +20,7 @@ public class NumeroParControllerForm {
     public String numeroParForm(NumData numData) { return "numeroPar"; }
 
     @PostMapping("/numeroparform")
-    public String checkPersonInfo(@ModelAttribute @Valid NumData numData, BindingResult bindingResult, Model model) {
+    public String checkNumInfo(@ModelAttribute @Valid NumData numData, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "numeroPar";
         }
