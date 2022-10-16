@@ -5,7 +5,7 @@
     <table>
         <tr>
             <td>Número:</td>
-            <td><input type="text" th:field="*{num}" /></td>
+            <td><input type="number" th:field="*{num}" /></td>
             <td th:if="${#fields.hasErrors('num')}" th:errors="*{num}"></td>
         </tr>
         <tr>

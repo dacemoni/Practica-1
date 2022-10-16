@@ -19,12 +19,16 @@ public class NumeroParControllerForm {
     @GetMapping("/numeroparform")
     public String numeroParForm(NumData numData) { return "numeroPar"; }
 
+    @RequestMapping("/numeroparform/{numero}")
+    public @ResponseBody String esPar(@PathVariable(value="num") int num) {return service.esPar(num);
+    }
+
     @PostMapping("/numeroparform")
     public String checkNumInfo(@ModelAttribute @Valid NumData numData, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "numeroPar";
         }
         model.addAttribute("mensaje", service.esPar(numData.getNum()));
-        return "par";
+        return "num";
     }
 }
